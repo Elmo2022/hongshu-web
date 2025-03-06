@@ -31,9 +31,9 @@
           <SujContainer v-show="showHistory" :closeHistoryRecord="showHistory"></SujContainer>
         </div>
         <div class="right">
-          <Iphone class="right-icon" @click="handleClick('https://gitee.com/Maverick_Ma/hongshu')" />
-          <Monitor class="right-icon" @click="handleClick('https://gitee.com/Maverick_Ma/hongshu')" />
-          <Eleme class="right-icon" @click="handleClick('https://gitee.com/Maverick_Ma/hongshu')" />
+          <!-- <Iphone class="right-icon" @click="handleClick('https://gitee.com/Maverick_Ma/hongshu')" /> -->
+          <Monitor class="right-icon" @click="handleClick('https://elmo2022.github.io/myBlog/')" />
+          <Eleme class="right-icon" @click="handleClick('https://elmo2022.github.io/myBlog/')" />
         </div>
       </header>
     </div>
@@ -48,14 +48,14 @@
           <li :class="activeLink == 1 ? 'active-channel' : ''" @click="toLink(1)">
             <Star style="width: 1.3em; height: 1.3em; margin-right: 8px" /><span class="channel"> 动态</span>
           </li>
-          <li :class="activeLink == 2 ? 'active-channel' : ''" @click="toLink(2)">
+          <!-- <li :class="activeLink == 2 ? 'active-channel' : ''" @click="toLink(2)">
             <Bell style="width: 1.3em; height: 1.3em; margin-right: 8px" />
 
             <el-badge is-dot class="item" v-if="messageCount > 0 && userInfo != null">
               <span class="channel"> 通知</span></el-badge
             >
             <span class="channel" v-else>通知</span>
-          </li>
+          </li> -->
           <li :class="activeLink == 3 ? 'active-channel' : ''" @click="toLink(3)">
             <CirclePlus style="width: 1.3em; height: 1.3em; margin-right: 8px" /><span class="channel"> 发布</span>
           </li>
