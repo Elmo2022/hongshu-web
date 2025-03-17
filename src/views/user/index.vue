@@ -276,6 +276,7 @@ const initData = () => {
     userInfo.value = res.data;
     if (res.data.tags != null) {
       tagList.value = JSON.parse(res.data.tags);
+      
     }
   });
   isFollow(uid).then((res) => {

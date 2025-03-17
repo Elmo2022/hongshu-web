@@ -40,7 +40,7 @@ export const routes = [
       },
       {
         path: "/push",
-        component: () => import("@/views/push/index.vue"),
+        component: () => import("@/views/push/index1.vue"),
         name: "push",
       },
       {

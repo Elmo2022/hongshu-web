@@ -2,6 +2,22 @@
   <div class="note-detail-mask" style="transition: background-color 0.4s ease 0s;hsla(0,0%,100%,0.98)">
     <div class="note-container">
       <div class="media-container">
+        <template v-if="noteInfo.imgList.toString().search('.mp4')!=-1">
+          <el-carousel height="90vh" :autoplay="false">
+  <el-carousel-item v-for="(item, index) in noteInfo.imgList" :key="index">
+    <video controls
+           :src="item"
+           style="width: 100%; height: 100%; object-fit: cover;"
+    >
+      抱歉，你的浏览器不支持嵌入式视频，不过不用担心，你可以<a
+        :href="item"
+        >下载</a
+      >并用你最喜欢的视频播放器观看！
+    </video>
+  </el-carousel-item>
+</el-carousel>
+       </template>
+       <template v-else >
         <el-carousel height="90vh" :autoplay="false">
           <el-carousel-item v-for="(item, index) in noteInfo.imgList" :key="index">
             <el-image
@@ -12,6 +28,8 @@
             />
           </el-carousel-item>
         </el-carousel>
+       </template>
+ 
       </div>
 
       <div class="interaction-container">
@@ -177,6 +195,10 @@ const props = defineProps({
     type: Date,
     default: null,
   },
+  types:{
+    type:String,
+    default:""
+  }
 });
 
 const currentUid = ref("");
@@ -221,11 +243,17 @@ watch(
     currentPage.value = 1;
     if (props.nid !== null && props.nid !== "") {
       getNoteById(props.nid).then((res: any) => {
+        console.log(res)
         console.log("---note", res.data);
         noteInfo.value = res.data;
-        noteInfo.value.imgList = JSON.parse(res.data.urls);
+       
+        // noteInfo.value.imgList = JSON.parse(res.data.urls);
         noteInfo.value.time = formateTime(res.data.time);
+        noteInfo.value.imgList = JSON.parse(res.data.urls);
+        noteInfo.value.type = res.data.noteType
         likeOrComment.value.isLike = noteInfo.value.isLike;
+        console.log("1111111111111111111")
+        console.log(noteInfo.value)
       });
     }
   }
@@ -424,9 +452,7 @@ initData();
     cursor: pointer;
 
     .close-mask-white {
-      box-shadow:
-        0 2px 8px 0 rgba(0, 0, 0, 0.04),
-        0 1px 2px 0 rgba(0, 0, 0, 0.02);
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
       border: 1px solid rgba(0, 0, 0, 0.08);
     }
 
@@ -451,16 +477,12 @@ initData();
   .note-container {
     width: 65%;
     height: 86%;
-    transition:
-      transform 0.4s ease 0s,
-      width 0.4s ease 0s;
+    transition: transform 0.4s ease 0s, width 0.4s ease 0s;
     transform: translate(280px, 60px) scale(1);
     overflow: visible;
 
     display: flex;
-    box-shadow:
-      0 8px 64px 0 rgba(0, 0, 0, 0.04),
-      0 1px 4px 0 rgba(0, 0, 0, 0.02);
+    box-shadow: 0 8px 64px 0 rgba(0, 0, 0, 0.04), 0 1px 4px 0 rgba(0, 0, 0, 0.02);
     border-radius: 20px;
     background: #f8f8f8;
     transform-origin: left top;

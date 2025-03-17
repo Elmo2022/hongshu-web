@@ -14,6 +14,7 @@
       <template #item="{ item }">
         <el-skeleton style="width: 240px" :loading="!item.isLoading" animated>
           <template #template>
+            111111
             <el-image
               :src="item.noteCover"
               :style="{
@@ -55,6 +56,7 @@
                 >
                 </el-image>
                 <div v-if="item.auditStatus === '0'" class="overlay">审核中</div>
+                <div v-if="item.urls.toString().search('.mp4')!=-1" class="overlay2"><svg data-v-e562a3ac="" t="1734053667366" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5045" width="25" height="25"><path data-v-e562a3ac="" d="M512 0C230.4 0 0 230.4 0 512s230.4 512 512 512 512-230.4 512-512S793.6 0 512 0z m0 981.333333C253.866667 981.333333 42.666667 770.133333 42.666667 512S253.866667 42.666667 512 42.666667s469.333333 211.2 469.333333 469.333333-211.2 469.333333-469.333333 469.333333z" fill="#ffffff" p-id="5046"></path><path data-v-e562a3ac="" d="M672 441.6l-170.666667-113.066667c-57.6-38.4-106.666667-12.8-106.666666 57.6v256c0 70.4 46.933333 96 106.666666 57.6l170.666667-113.066666c57.6-42.666667 57.6-106.666667 0-145.066667z" fill="#ffffff" p-id="5047"></path></svg></div>
                 <div v-if="item.auditStatus === '2'" class="overlay not-passed">未通过⚠️</div>
               </div>
               <div class="footer">
@@ -92,6 +94,7 @@
     v-show="mainShow"
     :nid="nid"
     :nowTime="new Date()"
+    :types="types"
     class="animate__animated animate__zoomIn animate__delay-0.5s"
     @click-main="close"
   ></Main>
@@ -121,6 +124,8 @@ watch(
     currentPage.value = 1;
     noteList.value = [] as Array<any>;
     getNoteList(newType);
+    console.log("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh")
+    console.log(noteList.value)
   }
 );
 
@@ -142,6 +147,7 @@ const close = () => {
   mainShow.value = false;
 };
 
+const types = ref("")
 const toMain = (noteId: string) => {
   // router.push({ name: "main", state: { nid: nid } });
   nid.value = noteId;
@@ -156,6 +162,7 @@ const setData = (res: any) => {
     return item.uid === currentUid || (item.auditStatus !== "0" && item.auditStatus !== "2");
   });
   noteList.value.push(...filteredRecords);
+  types.value=records.noteType;
 };
 
 const getNoteList = (type: number) => {
@@ -194,6 +201,20 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 8px;
+  font-size: 20px;
+}
+.overlay2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  // width: 100%;
+  // height: 100%;
+  // background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+  color: white;
+  display: flex;
+  // align-items: center;
+  // justify-content: center;
   border-radius: 8px;
   font-size: 20px;
 }

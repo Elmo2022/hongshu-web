@@ -236,6 +236,8 @@ const getFollowTrends = () => {
       item.time = formateTime(item.time);
       trendData.value.push(item);
     });
+    console.log("哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈")
+    console.log(trendData.value)
     trendTotal.value = total;
   });
 };
