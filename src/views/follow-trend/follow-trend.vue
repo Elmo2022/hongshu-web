@@ -20,7 +20,45 @@
                 </div>
                 <div class="interaction-imgs" @click="toMain(item.nid)">
                   <!-- 限制最多显示三张图片 -->
-                  <div
+              <template v-if="item.imgUrls.toString().search('.mp4')!=-1">
+                <div
+                    class="details-box"
+                    v-for="(url, index) in item.imgUrls.slice(0, 3)"
+                    :key="index"
+                    style="position: relative"
+                  >
+                    <!-- <el-image
+                      v-if="!item.isLoading"
+                      :src="url"
+                      @load="handleLoad(item)"
+                      style="height: 230px; width: 100%"
+                    ></el-image> -->
+                    <!-- <el-image
+                      v-else
+                      :src="url"
+                      class="note-img animate__animated animate__fadeIn animate__delay-0.5s"
+                      fit="cover"
+                      style="height: 230px; width: 100%"
+                    ></el-image> -->
+                    <video controls
+                   :src="url"
+                    style="width: 100%; height: 100%; object-fit: cover;"
+                    class="note-img animate__animated animate__fadeIn animate__delay-0.5s"
+                      >
+                    抱歉，你的浏览器不支持嵌入式视频，不过不用担心，你可以<a
+                      :href="item"
+                      >下载</a
+                    >并用你最喜欢的视频播放器观看！
+                  </video>
+
+                    <!-- 在第三张图片上显示覆盖标识 -->
+                    <div v-if="index === 2 && item.imgUrls.length > 3" class="overlay">
+                      <span class="more-text">+{{ item.imgUrls.length - 3 }}</span>
+                    </div>
+                  </div>
+              </template>
+              <template v-else>
+                <div
                     class="details-box"
                     v-for="(url, index) in item.imgUrls.slice(0, 3)"
                     :key="index"
@@ -45,6 +83,7 @@
                       <span class="more-text">+{{ item.imgUrls.length - 3 }}</span>
                     </div>
                   </div>
+              </template>
                 </div>
                 <div class="interaction-footer">
                   <div class="icon-item">
