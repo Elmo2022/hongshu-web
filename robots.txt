@@ -1,0 +1,19 @@
+User-agent: *
+
+Disallow: /subscribe/subscribed
+Disallow: /user/settings
+Disallow: /drafts
+Disallow: /news-drafts
+Disallow: /editor
+Disallow: /oauth-result
+Disallow: /search
+Disallow: /s
+Disallow: /equation
+Disallow: /book/order
+Disallow: /books/payment
+Disallow: /appview
+Disallow: /creator
+Disallow: /notification
+Disallow: /translate
+Disallow: /zhuanlan
+Disallow: /spost

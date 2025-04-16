@@ -564,7 +564,7 @@
               clearable
             />
           </div>
-          <div class="albums">
+          <!-- <div class="albums">
             <label>选择专辑：</label>
             <el-select
               v-model="album"
@@ -584,14 +584,14 @@
                 </div>
               </el-option>
             </el-select>
-          </div>
-          <div class="location">
+          </div> -->
+          <!-- <div class="location">
             <span>添加地点：</span>
             <div class="location-container" @click="getLocation">
               <el-icon><Location/></el-icon>
                 <span class="location-text">{{ locationInfo || '点击获取位置' }}</span>
             </div>
-          </div>
+          </div> -->
         </template>
         <div class="submit">
           <el-button type="danger" loading :disabled="true" v-if="pushLoading">发布</el-button>
@@ -2098,7 +2098,7 @@ a {
     
     .preview-image {
       max-width: 100%; /* 限制图片最大宽度为容器宽度 */
-      max-height: 60vh; /* 限制图片最大高度为视窗高度的80% */
+      max-height: 55vh; /* 限制图片最大高度为视窗高度的80% */
       object-fit: contain; /* 保持图片比例 */
       display: block; /* 移除图片底部的空隙 */
       margin: 0 auto; /* 水平居中 */
@@ -2331,7 +2331,7 @@ a {
   .preview-container {
     position: fixed; // 改为固定定位
     top: 120px; // 调整顶部距离
-    left: calc(30vw + 800px); // 根据左侧容器位置计算
+    left: calc(30vw + 750px); // 根据左侧容器位置计算
     height: calc(100vh - 112px);
 
     .view-switcher {

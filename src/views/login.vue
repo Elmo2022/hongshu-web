@@ -7,7 +7,7 @@
       </div>
       <div class="left">
         <div class="login-reason">登录后推荐更懂你的笔记</div>
-        <img class="logo" src="@/assets/logo.png" />
+        <img class="logo" src="@/assets/logo2.png" />
         <div class="course-video" style="display: none">
           <video
             src="https://fe-video-qc.xhscdn.com/fe-platform/f3ddbc4d8062e08c8684e1fa3bea7c2e2bb77c21.mp4"
@@ -322,8 +322,8 @@ a {
 
       .logo {
         margin-top: 70px;
-        width: 80px;
-        height: 35px;
+        width: 160px;
+        height: 70px;
         -webkit-user-select: none;
         user-select: none;
         pointer-events: none;

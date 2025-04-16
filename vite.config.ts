@@ -1,15 +1,64 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
-
+import { visualizer } from 'rollup-plugin-visualizer'
+import { Plugin as importToCDN } from 'vite-plugin-cdn-import'
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    visualizer({ open: true }),
+    importToCDN({
+      modules: [
+        {
+          // 引入时的包名
+          name: 'element-plus',
+          // app.use(), 全局注册时分配给模块的变量
+          var: 'element-plus',
+          // 根据自己的版本号找到对应的CDN网址
+          path: 'https://unpkg.com/element-plus@2.4.1/dist/index.full.js',
+          // 根据自己的版本号找到对应的CDN网址
+         // css: 'https://unpkg.com/@arco-design/web-vue@2.47.1/dist/arco.css',
+        },
+      ],
+    }),
+  ],
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
     },
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
   },
+
+
+  server: {
+      port: 80,
+      host: true,
+      open: true,
+      proxy: {
+        // https://cn.vitejs.dev/config/#server-proxy
+        '/dev-api': {
+          target: 'http://localhost:8080',
+          changeOrigin: true,
+          rewrite: (p) => p.replace(/^\/dev-api/, '')
+        }
+      }
+    },
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // build: {
   //   rollupOptions: {
   //     input: resolve(__dirname, 'src/views/index.html'), // 确保输入路径正确
@@ -35,18 +84,3 @@ export default defineConfig({
   //     },
   //   },
   // }
-
-  server: {
-      port: 80,
-      host: true,
-      open: true,
-      proxy: {
-        // https://cn.vitejs.dev/config/#server-proxy
-        '/dev-api': {
-          target: 'http://localhost:8080',
-          changeOrigin: true,
-          rewrite: (p) => p.replace(/^\/dev-api/, '')
-        }
-      }
-    },
-});

@@ -3,7 +3,7 @@
     <div class="top">
       <header class="mask-paper">
         <a style="display: flex">
-          <img src="@/assets/logo.png" style="width: 80px" />
+          <img src="@/assets/logo2.png" style="width: 160px;height: 70px;" />
         </a>
         <div class="tool-box"></div>
         <div class="input-box" id="sujContainer">
@@ -11,7 +11,7 @@
             type="text"
             v-model="keyword"
             class="search-input"
-            placeholder="搜索小红书"
+            placeholder="搜索"
             @input="changeInput"
             @focus="focusInput"
             @keyup.enter="searchPage"
@@ -127,7 +127,7 @@
         <div class="information-container" id="informationContainer">
           <div class="information-pad" v-show="padShow">
             <div class="container">
-              <div class="group-wrapper">
+              <!-- <div class="group-wrapper">
                 <a
                   class="menu-item hover-effect links"
                   target="_blank"
@@ -153,11 +153,11 @@
                     <span> 帮助与客服 </span>
                   </a>
                 </div>
-              </div>
+              </div> -->
               <div>
                 <div class="group-wrapper">
                   <div class="group-header">设置</div>
-                  <div class="menu-item hover-effect">
+                  <!-- <div class="menu-item hover-effect">
                     <span>深色模式</span>
                     <div class="multistage-toggle component">
                       <button class="toggle-item active">
@@ -171,7 +171,7 @@
                         </div>
                       </button>
                     </div>
-                  </div>
+                  </div> -->
                   <div v-if="userInfo != null">
                     <div class="menu-item hover-effect" @click="logout">
                       <a href="#"><span>退出登录</span></a>

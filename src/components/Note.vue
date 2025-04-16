@@ -14,7 +14,7 @@
       <template #item="{ item }">
         <el-skeleton style="width: 240px" :loading="!item.isLoading" animated>
           <template #template>
-            111111
+            暂无封面
             <el-image
               :src="item.noteCover"
               :style="{
@@ -110,7 +110,7 @@ import { options } from "@/constant/constant";
 import { useRoute } from "vue-router";
 import { useUserStore } from "@/store/userStore";
 const route = useRoute();
-
+const defaultImg = ref("http://ssiaowqoh.hb-bkt.clouddn.com/2025/04/01/02330c402c7842be850debccb9d06304.png")
 const props = defineProps({
   type: {
     type: Number,
