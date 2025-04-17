@@ -32,7 +32,7 @@
         </div>
         <div class="right">
           <!-- <Iphone class="right-icon" @click="handleClick('https://gitee.com/Maverick_Ma/hongshu')" /> -->
-          <Monitor class="right-icon" @click="handleClick('https://elmo2022.github.io/myBlog/')" />
+          <Monitor class="right-icon"  @click="openAIAssistant" />
           <Eleme class="right-icon" @click="handleClick('https://elmo2022.github.io/myBlog/')" />
         </div>
       </header>
@@ -203,6 +203,7 @@
     <Login v-show="loginShow" @click-child="close"></Login>
     <ToUP v-show="toUpshow" @click-to-up="toUpshow = false"></ToUP>
   </div>
+  <AIAssistant ref="aiAssistant"/>
 </template>
 
 <script lang="ts" setup>
@@ -234,7 +235,15 @@ import { useImStore } from "@/store/imStore";
 import { loginOut } from "@/api/user";
 import { wsKey } from "@/constant/constant";
 import ToUP from "@/views/to-up/index.vue";
+import AIAssistant from '@/components/AIAssistant.vue';
 
+// AI 小助手引用
+const aiAssistant = ref(null);
+
+// 打开 AI 小助手
+const openAIAssistant = () => {
+  aiAssistant.value.openDialog();
+};
 const router = useRouter();
 const route = useRoute();
 const userStore = useUserStore();
