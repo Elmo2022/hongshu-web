@@ -3,7 +3,7 @@
     <div class="top">
       <header class="mask-paper">
         <a style="display: flex">
-          <img src="@/assets/logo2.png" style="width: 160px;height: 70px;" />
+          <img src="@/assets/logo2.png" style="width: 160px; height: 70px" />
         </a>
         <div class="tool-box"></div>
         <div class="input-box" id="sujContainer">
@@ -32,8 +32,11 @@
         </div>
         <div class="right">
           <!-- <Iphone class="right-icon" @click="handleClick('https://gitee.com/Maverick_Ma/hongshu')" /> -->
-          <Monitor class="right-icon"  @click="openAIAssistant" />
-          <Eleme class="right-icon" @click="handleClick('https://elmo2022.github.io/myBlog/')" />
+          <div class="right-icon" data-tooltip="AI助手" @click="openAIAssistant">
+            <ChatLineRound />
+          </div>
+          <!-- <ChatLineRound  class="right-icon"  @click="openAIAssistant" data-tooltip="AI助手" /> -->
+          <!-- <Eleme class="right-icon" @click="handleClick('https://elmo2022.github.io/myBlog/')" /> -->
         </div>
       </header>
     </div>
@@ -203,7 +206,7 @@
     <Login v-show="loginShow" @click-child="close"></Login>
     <ToUP v-show="toUpshow" @click-to-up="toUpshow = false"></ToUP>
   </div>
-  <AIAssistant ref="aiAssistant"/>
+  <AIAssistant ref="aiAssistant" />
 </template>
 
 <script lang="ts" setup>
@@ -220,6 +223,7 @@ import {
   Iphone,
   Monitor,
   Eleme,
+  ChatLineRound,
 } from "@element-plus/icons-vue";
 import { useRouter, useRoute } from "vue-router";
 import Login from "@/views/login.vue";
@@ -235,7 +239,7 @@ import { useImStore } from "@/store/imStore";
 import { loginOut } from "@/api/user";
 import { wsKey } from "@/constant/constant";
 import ToUP from "@/views/to-up/index.vue";
-import AIAssistant from '@/components/AIAssistant.vue';
+import AIAssistant from "@/components/AIAssistant.vue";
 
 // AI 小助手引用
 const aiAssistant = ref(null);
@@ -553,10 +557,29 @@ a {
   margin-right: 50px;
 }
 
+// //GPU加速
 .right-icon:hover {
   transform: scale(1.2); /* 鼠标移入时放大 1.2 倍 */
 }
 
+.right-icon[data-tooltip] {
+  position: relative; /* 为伪元素提供定位上下文 */
+}
+
+.right-icon[data-tooltip]:hover::after {
+  content: attr(data-tooltip); /* 使用 data-tooltip 的值作为提示内容 */
+  position: absolute;
+  bottom: 100%; /* 提示框显示在图标的上方 */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  white-space: nowrap; /* 防止提示文本换行 */
+  z-index: 100; /* 确保提示框在其他元素之上 */
+}
 /* 添加选中标签的效果 */
 .channel-list li:hover {
   border-radius: 20px;
@@ -838,9 +861,7 @@ a {
           .container {
             width: 100%;
             background: #fff;
-            box-shadow:
-              0 4px 32px 0 rgba(0, 0, 0, 0.08),
-              0 1px 4px 0 rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.08), 0 1px 4px 0 rgba(0, 0, 0, 0.04);
             border-radius: 12px;
 
             .divider {
@@ -893,9 +914,7 @@ a {
 
                   .active {
                     background: #fff;
-                    box-shadow:
-                      0 2px 8px 0 rgba(0, 0, 0, 0.04),
-                      0 1px 2px 0 rgba(0, 0, 0, 0.02);
+                    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
                     color: #333;
                   }
 

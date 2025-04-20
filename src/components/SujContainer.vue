@@ -38,10 +38,10 @@
       </div>
       <div>
         <div class="hotspots">
-          <div class="header">
+          <!-- <div class="header">
             <span style="color: #888888">热点</span>
             <img src="@/assets/images/3.png" class="redian" crossorigin="anonymous" />
-          </div>
+          </div> -->
           <div class="hotspot-list">
             <div class="hotspot-item" v-for="(item, index) in hotList" :key="index">
               <p class="hotspot-index">{{ index + 1 }}</p>
