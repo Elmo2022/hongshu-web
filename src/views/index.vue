@@ -32,7 +32,7 @@
         </div>
         <div class="right">
           <!-- <Iphone class="right-icon" @click="handleClick('https://gitee.com/Maverick_Ma/hongshu')" /> -->
-          <div class="right-icon" data-tooltip="AI助手" @click="openAIAssistant">
+          <div class="right-icon" data-tooltip="AI文案助手" @click="openAIAssistant">
             <ChatLineRound />
           </div>
           <!-- <ChatLineRound  class="right-icon"  @click="openAIAssistant" data-tooltip="AI助手" /> -->
@@ -546,7 +546,7 @@ a {
 .right-icon {
   width: 1.5em;
   height: 1.5em;
-  margin-top: 5px;
+  margin-top: 10px;
   cursor: pointer;
 }
 
@@ -572,9 +572,9 @@ a {
   bottom: 100%; /* 提示框显示在图标的上方 */
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color:#f67586;
   color: white;
-  padding: 4px 8px;
+  padding: 4px 4px;
   border-radius: 4px;
   font-size: 10px;
   white-space: nowrap; /* 防止提示文本换行 */

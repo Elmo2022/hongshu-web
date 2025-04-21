@@ -73,7 +73,7 @@ const searchStore = useSearchStore();
 const historyRecordList = ref<Array<string>>([]);
 const hotList = ref<Array<any>>([]);
 const showTagState = ref(false);
-const recommendRecords = ["壁纸", "风景", "情侣", "头像", "动漫", "动物"];
+const recommendRecords = ["壁纸", "风景", "NBA", "头像", "美食", "动物"];
 
 const props = defineProps({
   closeHistoryRecord: {
