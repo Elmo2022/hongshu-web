@@ -55,9 +55,9 @@
 <script setup>
 import { ref, onMounted, nextTick, defineExpose } from 'vue';
 import { ElMessage } from 'element-plus';
-
+import { useUserStore } from "@/store/userStore";
 // API 配置
-
+const userStore = useUserStore();
 const API_URL = 'https://api.moonshot.cn/v1/chat/completions';
 
 const API_KEY = ''; 
@@ -68,7 +68,7 @@ const dialogVisible = ref(false);
 
 // 消息状态
 
-const messages = ref([{ text: "欢迎！我是你的小助手" }]);
+const messages = ref([{ text: "欢迎！我是你的文案小助手" }]);
 
 const currentMessage = ref('');
 
@@ -76,7 +76,7 @@ const isSending = ref(false);
 
 // 头像
 
-const userAvatar = 'https://statics.moonshot.cn/kimi-web-seo/assets/kimi-Bib6pN_I.png';
+const userAvatar = userStore.getUserInfo().avatar;
 
 const assistantAvatar = 'https://statics.moonshot.cn/kimi-web-seo/assets/favicon-OXkYivQY.ico';
 

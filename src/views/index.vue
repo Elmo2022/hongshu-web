@@ -23,7 +23,7 @@
             </div>
             <div class="search-icon" @click="searchPage">
               <a href="#">
-                <Search style="width: 1.2em; height: 1.2em; margin-right: 20px; margin-top: 5px" />
+                <Search style="width: 1.2em; height: 1.2em; margin-right: 20px; margin-top: 5px" @click="searchPage" />
               </a>
             </div>
           </div>
@@ -307,6 +307,7 @@ const searchPage = () => {
   showSearch.value = false;
 
   router.push({ name: "search", query: { keyword: keyword.value } });
+  window.location.reload();
 };
 
 watch(
