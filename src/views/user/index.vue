@@ -51,7 +51,7 @@
                 </div>
                 <div class="user-content">
                   <span class="user-redId">小红书号：{{ userInfo.hsId }}</span
-                  ><span class="user-IP"> IP属地：{{ userInfo.address }}</span>
+                  ><span class="user-IP" style="width: 200px;"></span>
                 </div>
               </div>
             </div>

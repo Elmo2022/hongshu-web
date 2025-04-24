@@ -4,13 +4,13 @@
       <div class style="height: 72px">
         <div class="reds-sticky">
           <div class="reds-tabs-list">
-            <el-badge :value="_countMessage.chatCount" :max="99" :hidden="_countMessage.chatCount == 0">
+            <!-- <el-badge :value="_countMessage.chatCount" :max="99" :hidden="_countMessage.chatCount == 0">
               <div :class="type === 3 ? 'reds-tab-item active tab-item' : 'reds-tab-item tab-item'">
                 <div class="badge-container" @click="toPage(3)">
                   <span>我的消息</span>
                 </div>
               </div>
-            </el-badge>
+            </el-badge> -->
             <el-badge :value="_countMessage.commentCount" :max="99" :hidden="_countMessage.commentCount == 0">
               <div :class="type === 1 ? 'reds-tab-item active tab-item' : 'reds-tab-item tab-item'">
                 <div class="badge-container" @click="toPage(1)">
@@ -130,6 +130,7 @@ const initData = () => {
   }
 };
 initData();
+toPage(1);
 </script>
 <style lang="less" scoped>
 .container {
