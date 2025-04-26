@@ -45,10 +45,10 @@
                     style="width: 100%; height: 100%; object-fit: cover;"
                     class="note-img animate__animated animate__fadeIn animate__delay-0.5s"
                       >
-                    抱歉，你的浏览器不支持嵌入式视频，不过不用担心，你可以<a
+                    抱歉，您的浏览器不支持嵌入式视频，不过不用担心，您可以<a
                       :href="item"
                       >下载</a
-                    >并用你最喜欢的视频播放器观看！
+                    >并用您最喜欢的视频播放器观看！
                   </video>
 
                     <!-- 在第三张图片上显示覆盖标识 -->

@@ -760,7 +760,8 @@ initData();
             font-weight: 600;
             cursor: pointer;
             flex-shrink: 0;
-            background: #3d8af5;
+          //  background: #3d8af5;
+            background: #ff2442;
             border-radius: 44px;
             font-size: 16px;
           }

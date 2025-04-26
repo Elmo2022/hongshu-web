@@ -603,9 +603,9 @@
           </button>
         </div>
         <!-- 右侧预览区域 -->
-        <div class="preview-container">
+        <!-- <div class="preview-container">
           <div class="mobile-wrapper">
-            <!-- 手机状态栏 -->
+            手机状态栏 
             <div class="status-bar">
               <span class="time">00:00</span>
               <div class="right-icons">
@@ -675,11 +675,11 @@
                 </span>
               </div>
             </div>
-            <!-- 内容区域 -->
+             内容区域 
             <div class="content-area">
-              <!-- 详情模式 -->
+             详情模式 
               <template v-if="previewMode === 'detail'">
-                <!-- 顶部用户信息 -->
+               顶部用户信息 
                 <div class="user-bar">
                   <div class="left">
                     <i class="el-icon-arrow-left"></i>
@@ -691,22 +691,22 @@
                     <i class="el-icon-share"></i>
                   </div>
                 </div>
-                <!-- 预览内容区 -->
+               预览内容区 
                 <div class="preview-content">
                   <div class="media-container">
-                    <!-- 根据当前模式显示图片或视频 -->
+                     根据当前模式显示图片或视频 
                     <template v-if="currentTab === 'image'">
                       <div v-if="fileList.length > 0" class="image-slider">
-                        <!-- 左右切换按钮 -->
+                       左右切换按钮 
                         <div class="arrow left" @click="prevImage" v-show="currentIndex > 0">
                         </div>
                         <div class="arrow right" @click="nextImage" v-show="currentIndex < fileList.length - 1">
                         </div>
 
-                        <!-- 图片展示 -->
+                         图片展示 
                         <img :src="fileList[currentIndex].url" class="preview-image" />
 
-                        <!-- 底部指示点 -->
+                         底部指示点 
                         <div class="indicator-dots" v-if="fileList.length > 1">
                           <span
                             v-for="(_, index) in fileList"
@@ -721,10 +721,10 @@
                       <video v-if="videoUrl" :src="videoUrl" class="preview-video" controls></video>
                     </template>
                   </div>
-                  <!-- 底部信息 -->
+                  底部信息 
                   <div class="post-info">
                     <p class="post-time">发表于 {{ getCurrentTime() }}   北京</p>
-                    <!-- 底部操作栏 -->
+                    底部操作栏 
                     <div class="action-bar">
                       <div class="action-item">
                         <i class="el-icon-chat-dot-round"></i>
@@ -739,9 +739,9 @@
                   </div>
                 </div>
               </template>
-              <!-- 双列模式 -->
+               双列模式 
               <template v-else>
-                <!-- App 导航栏 -->
+                 App 导航栏 
                 <div class="app-header">
                   <div class="nav-tabs">
                     <span class="mobile-tab-item">关注</span>
@@ -750,13 +750,13 @@
                   </div>
                 </div>
 
-                <!-- 搜索栏 -->
+                搜索栏 
                 <div class="search-bar">
                   <i class="el-icon-search"></i>
                   <span class="placeholder">🔍搜索笔记，商品和用户</span>
                 </div>
 
-                <!-- 分类标签栏 -->
+                 分类标签栏 
                 <div class="category-tabs">
                   <div class="tab-scroll">
                     <span class="category-tab-item active">推荐</span>
@@ -788,7 +788,7 @@
                       </div>
                     </div>
                   </div>
-                  <!-- 添加一些示例项目 -->
+                 添加一些示例项目
                   <div class="grid-item placeholder" v-for="n in 5" :key="n">
                     <div class="grid-image placeholder"></div>
                     <div class="grid-info">
@@ -799,7 +799,7 @@
                       </div>
                     </div>
                   </div>
-                  <!-- 底部导航栏 -->
+                   底部导航栏 
                   <div class="bottom-nav">
                     <div class="nav-item active">
                       <i class="el-icon-house"></i>
@@ -827,14 +827,14 @@
               </template>
             </div>
           </div>
-          <!-- 在 content-area 底部添加切换按钮 -->
-          <div class="view-switcher">
+         在 content-area 底部添加切换按钮 
+           <div class="view-switcher">
             <div :class="['switch-btn', { active: previewMode === 'detail' }]" @click="previewMode = 'detail'">
               详情
             </div>
             <div :class="['switch-btn', { active: previewMode === 'grid' }]" @click="previewMode = 'grid'">双列</div>
           </div>
-        </div>
+        </div> -->
       </template>
     </div>
     <div v-else>

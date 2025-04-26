@@ -33,7 +33,7 @@
         <el-input
           v-model="currentMessage"
           type="textarea"
-          placeholder="请输入您的文案要求"
+          placeholder="请输入(比如请给我写一段关于落日的文案)"
           rows="3"
           @keyup.enter="sendMessage"
           :disabled="isSending"
@@ -68,7 +68,7 @@ const dialogVisible = ref(false);
 
 // 消息状态
 
-const messages = ref([{ text: "欢迎！我是你的文案小助手" }]);
+const messages = ref([{ text: "欢迎！我是文案小助手" }]);
 
 const currentMessage = ref('');
 
@@ -144,7 +144,7 @@ const sendMessage = async () => {
     // 滚动到底部
     scrollToBottom();
   } catch (error) {
-    ElMessage.error('请求失败，请稍后再试');
+    ElMessage.error('网络有问题，请稍后再试');
     console.error('Error:', error);
   } finally {
     isSending.value = false;
@@ -186,7 +186,7 @@ defineExpose({
 
 .message {
   display: flex;
-  max-width: 80%;
+  max-width: 150%;
 }
 
 .message.user {
