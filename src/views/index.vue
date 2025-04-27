@@ -136,7 +136,7 @@
                   target="_blank"
                   href="https://agree.xiaohongshu.com/h5/terms/ZXXY20220331001/-1"
                 >
-                  <span>关于小红书</span>
+                  <span>关于论坛</span>
                   <div class="icon">
                     <ArrowRight style="width: 1em; height: 1em; margin-right: 8px" />
                   </div>

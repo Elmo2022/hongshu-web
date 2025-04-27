@@ -21,7 +21,7 @@
           />
           <div class="status" style="display: none"></div>
         </div>
-        <div class="tip">使用 小红书 / 微信 扫码登录</div>
+        <div class="tip">扫码登录</div>
         <!-- <div class="course">
           <svg class="reds-icon play" width="11" height="11">
             <use xlink:href="#play"></use>

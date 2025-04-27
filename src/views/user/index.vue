@@ -50,7 +50,7 @@
                   </div>
                 </div>
                 <div class="user-content">
-                  <span class="user-redId">小红书号：{{ userInfo.hsId }}</span
+                  <span class="user-redId">论坛号：{{ userInfo.hsId }}</span
                   ><span class="user-IP" style="width: 200px;"></span>
                 </div>
               </div>
