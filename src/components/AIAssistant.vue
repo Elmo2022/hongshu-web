@@ -78,7 +78,7 @@ const isSending = ref(false);
 
 const userAvatar = userStore.getUserInfo().avatar;
 
-const assistantAvatar = 'https://statics.moonshot.cn/kimi-web-seo/assets/favicon-OXkYivQY.ico';
+const assistantAvatar = 'https://statics.moonshot.cn/kimi-web-seo/assets/kimi-last-DFL4Por3.png';
 
 // 聊天容器引用
 const chatContainer = ref(null);

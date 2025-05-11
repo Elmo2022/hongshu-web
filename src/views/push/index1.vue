@@ -260,7 +260,7 @@
             <div class="upload-info">
               <div class="info-item">
                 <h4>视频大小</h4>
-                <p>支持时长60分钟以内，最大20GB的视频文件</p>
+                <p>支持时长1分钟以内，最大20MB的视频文件</p>
               </div>
               <div class="vertical-divider"></div>
               <div class="info-item">

@@ -252,6 +252,7 @@ watch(
         noteInfo.value.imgList = JSON.parse(res.data.urls);
         noteInfo.value.type = res.data.noteType
         likeOrComment.value.isLike = noteInfo.value.isLike;
+        
         console.log("1111111111111111111")
         console.log(noteInfo.value)
       });

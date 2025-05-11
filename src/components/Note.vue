@@ -16,6 +16,19 @@
           <template #template>
             暂无封面
             <el-image
+              v-if="item.urls.toString().search('.mp4')!=-1"
+              src="http://svy6szzo9.hb-bkt.clouddn.com/2025/05/08/c63ed936a1664101b836f0540f7dd1bc.png"
+              :style="{
+                width: '240px',
+                maxHeight: '300px',
+                height: item.noteCoverHeight + 'px',
+                borderRadius: '8px',
+              }"
+              @load="handleLoad(item)"
+            >
+            </el-image>
+            <el-image
+              v-else
               :src="item.noteCover"
               :style="{
                 width: '240px',
@@ -44,7 +57,21 @@
             <div class="card" style="max-width: 240px">
               <div class="image-container">
                 <el-image
+                  v-if="item.urls.toString().search('.mp4')===-1"
                   :src="item.noteCover"
+                  :style="{
+                    width: '240px',
+                    maxHeight: '300px',
+                    height: item.noteCoverHeight + 'px',
+                    borderRadius: '8px',
+                  }"
+                  fit="cover"
+                  @click="toMain(item.id)"
+                >
+                </el-image>
+                <el-image
+                  v-else
+                  src="http://svy6szzo9.hb-bkt.clouddn.com/2025/05/08/c63ed936a1664101b836f0540f7dd1bc.png"
                   :style="{
                     width: '240px',
                     maxHeight: '300px',
@@ -110,7 +137,8 @@ import { options } from "@/constant/constant";
 import { useRoute } from "vue-router";
 import { useUserStore } from "@/store/userStore";
 const route = useRoute();
-const defaultImg = ref("http://ssiaowqoh.hb-bkt.clouddn.com/2025/04/01/02330c402c7842be850debccb9d06304.png")
+const defaultImg = ref("http://svy6szzo9.hb-bkt.clouddn.com/2025/05/08/c63ed936a1664101b836f0540f7dd1bc.png")
+const images = "http://svy6szzo9.hb-bkt.clouddn.com/2025/05/08/c63ed936a1664101b836f0540f7dd1bc.png"
 const props = defineProps({
   type: {
     type: Number,
@@ -167,6 +195,8 @@ const setData = (res: any) => {
 
 const getNoteList = (type: number) => {
   getTrendByUser(currentPage.value, pageSize, uid, type).then((res) => {
+    console.log("顶点的")
+    console.log(res)
     setData(res);
   });
 };
