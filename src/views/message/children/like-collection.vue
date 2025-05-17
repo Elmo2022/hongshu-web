@@ -12,9 +12,9 @@
               <a class>{{ item.username }}</a>
             </div>
             <div class="interaction-hint">
-              <span v-if="item.type == 1">赞了你的笔记</span>
+              <span v-if="item.type == 1">赞了你的帖子</span>
               <span v-if="item.type == 2">赞了你的评论</span>
-              <span v-if="item.type == 3">收藏你的笔记</span>
+              <span v-if="item.type == 3">收藏你的帖子</span>
               <span v-if="item.type == 4">赞了你的{{ item.content }}专辑</span>
               &nbsp;<span>{{ item.time }}</span>
             </div>

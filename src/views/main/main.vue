@@ -326,7 +326,7 @@ const pinned = (noteId: string, type: string) => {
       }
     })
     .catch(() => {
-      ElMessage.warning("最多只能置顶3个笔记");
+      ElMessage.warning("最多只能置顶3个帖子");
     });
 };
 

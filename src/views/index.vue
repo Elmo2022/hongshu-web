@@ -90,7 +90,7 @@
               <svg data-v-23d27ada="" data-v-6432121e="" class="reds-icon icon" width="16" height="16">
                 <use data-v-23d27ada="" xlink:href="#collect"></use>
               </svg>
-              <span data-v-6432121e="" class="desc">查看收藏、点赞的笔记</span>
+              <span data-v-6432121e="" class="desc">查看收藏、点赞的帖子</span>
             </div>
             <div data-v-6432121e="" class="line-container">
               <svg data-v-23d27ada="" data-v-6432121e="" class="reds-icon icon" width="16" height="16">

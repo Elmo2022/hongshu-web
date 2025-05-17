@@ -139,7 +139,7 @@
             :class="type == 1 ? 'reds-tab-item active' : 'reds-tab-item'"
             style="padding: 0rem 1rem; margin-right: 0rem; font-size: 1rem"
           >
-            <span @click="toPage(1)">笔记</span>
+            <span @click="toPage(1)">帖子</span>
           </div>
           <div
             :class="type == 2 ? 'reds-tab-item active' : 'reds-tab-item'"

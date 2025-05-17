@@ -6,7 +6,7 @@
         <Close style="width: 1em; height: 1em" />
       </div>
       <div class="left">
-        <div class="login-reason">登录后推荐更懂你的笔记</div>
+        <div class="login-reason">登录后推荐更懂你的帖子</div>
         <img class="logo" src="@/assets/logo2.png" />
         <div class="course-video" style="display: none">
           <video
