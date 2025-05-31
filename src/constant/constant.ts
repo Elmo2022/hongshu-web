@@ -1,10 +1,7 @@
 import loading from "@/assets/loading.png";
 import error from "@/assets/error.png";
 import { reactive } from "vue";
-// websocket地址
-// export const wsKey = "ws://www.ccimgvideo.top/ws/";
-// // 项目url地址
-// export const baseURL = "http://www.ccimgvideo.top/api";
+
 
 // 本地项目websocket地址
 export const wsKey = "ws://localhost:8080/web/ws/";
